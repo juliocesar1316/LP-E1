@@ -37,7 +37,7 @@ public class Capacete {
 		return preco;
 	}
 
-	public void setPreco(Integer quantidade_viseira) {
+	public void setPreco(double quantidade_viseira) {
 		this.preco = quantidade_viseira;
 	}
 	
@@ -51,24 +51,36 @@ public class Capacete {
 	
 	//metodos de classe
 	
-	public String Colocar(String modelo) {
-		System.out.println("O modelo: " +  modelo + "é o melhor do mercado"); //Marca do capacete
+	public void Colocar(String modelo) {
+		System.out.println("O modelo: " +  modelo + " ï¿½ o melhor do mercado"); //Marca do capacete
+		
 	}
-	public String Testar(String mat, String prot) {
-		System.out.println("O teste é realizado atraves da resistencia do material e da proteção");
+	public void Testar(String mat, String prot) {
+		System.out.println("O teste ï¿½ realizado atraves da resistencia do material e da proteï¿½ï¿½o");
 		System.out.println("..... Testando");
-		System.out.println("o material: " + mat + "é bem resistente e passou no teste");
-		System.out.println("A protecao: " + prot + "passou no teste tambem");
+		System.out.println("o material: " + mat + " ï¿½ bem resistente e passou no teste");
+		System.out.println("A protecao: " + prot + " passou no teste tambem");
 	}
 	
-	public String Comprar(String mat,int price, String corCapa) {
-		System.out.println("O capacete: " + mat + "com a/as cores: " + );
-	
+	public void Comprar(String mat,double price, String corCapa) {
+		System.out.println("O capacete: " + mat + " com a/as cores: " + corCapa);
+		System.out.println("Custa: " + " R$ " + price);
 	}
 	
 	
 	public static void main(String[] args) {
+		//Criando o objeto
 		
+		Capacete c1 = new Capacete();
+		c1.setMarca("LS2");
+		c1.setMaterial("Carbono,Kevlar e Fiberglass");
+		c1.setCor("Preto Fosco/Roxo");
+		c1.setPreco(1500);
+		c1.setProtecao("Proteï¿½ï¿½o UV/ Cinta jugular reforï¿½ada");
+		
+		c1.Colocar(c1.marca);
+		c1.Testar(c1.material, c1.protecao);
+		c1.Comprar(c1.material, c1.preco, c1.cor);	
 	}
 
 	
