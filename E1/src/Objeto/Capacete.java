@@ -51,19 +51,18 @@ public class Capacete {
 	
 	//metodos de classe
 	
-	public void Colocar(String modelo) {
-		System.out.println("O modelo: " +  modelo + " � o melhor do mercado"); //Marca do capacete
-		
-	}
+	
 	public void Testar(String mat, String prot) {
-		System.out.println("O teste � realizado atraves da resistencia do material e da prote��o");
-		System.out.println("..... Testando");
-		System.out.println("o material: " + mat + " � bem resistente e passou no teste");
+		System.out.println(".................. Teste de Capacete ..................");
+		System.out.println("O teste e realizado atraves da resistencia do material e da protecao");
+		System.out.println("\n..... Testando......");
+		System.out.println("O material: " + mat + " e bem resistente e passou no teste");
 		System.out.println("A protecao: " + prot + " passou no teste tambem");
 	}
 	
 	public void Comprar(String mat,double price, String corCapa) {
-		System.out.println("O capacete: " + mat + " com a/as cores: " + corCapa);
+		System.out.println("\n.................. Venda de Capacete ..................");
+		System.out.println("Capacete: " + mat + " com a/as cores: " + corCapa);
 		System.out.println("Custa: " + " R$ " + price);
 	}
 	
@@ -76,9 +75,8 @@ public class Capacete {
 		c1.setMaterial("Carbono,Kevlar e Fiberglass");
 		c1.setCor("Preto Fosco/Roxo");
 		c1.setPreco(1500);
-		c1.setProtecao("Prote��o UV/ Cinta jugular refor�ada");
+		c1.setProtecao("Protecaoo UV/ Cinta jugular reforcada");
 		
-		c1.Colocar(c1.marca);
 		c1.Testar(c1.material, c1.protecao);
 		c1.Comprar(c1.material, c1.preco, c1.cor);	
 	}
