@@ -137,6 +137,9 @@ public class FormCapa extends JFrame {
 				input_preco.setText("");
 				System.out.println(c2.getProtecao());
 				input_prot.setText("");
+				
+				FileCsv file = new FileCsv();
+				file.File(c2.getMarca(), c2.getMaterial(), c2.getCor(), c2.getProtecao(), c2.getPreco());
 			}
 		});
 		
