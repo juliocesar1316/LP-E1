@@ -1,5 +1,8 @@
 package Objeto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Capacete {
 	//Atributos
 	private String marca;
@@ -78,7 +81,9 @@ public class Capacete {
 		c1.setProtecao("Protecaoo UV/ Cinta jugular reforcada");
 		
 		c1.Testar(c1.material, c1.protecao);
-		c1.Comprar(c1.material, c1.preco, c1.cor);	
+		c1.Comprar(c1.material, c1.preco, c1.cor);
+		
+		ArrayList<String> capa = new ArrayList<String>();
 	}
 
 	

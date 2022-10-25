@@ -1,11 +1,12 @@
 package Objeto;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
 
 public class FileCsv {
-	public void File(String modelo, String mat, String corCapa, String prot, double valor) {
+	public void File(ArrayList<String> capa) {
         try (PrintWriter writer = new PrintWriter(new File("capacete.csv"))) {
 
             writer.write("Marca,");
@@ -14,12 +15,15 @@ public class FileCsv {
             writer.write("Proteção,");
             writer.println("Preço");
             
-            writer.write(modelo + ",");
-            writer.write(mat + ",");
-            writer.write(corCapa + ",");
-            writer.write(prot + ",");
-            writer.println(valor);
-        
+            int i = 0;
+            for (String dado : capa) {
+            	if(i % 5 == 0){
+            		writer.println();
+            	}
+            	writer.write(dado + ",");
+                i++;
+            };
+            
             writer.close();
             System.out.println("done!");
 

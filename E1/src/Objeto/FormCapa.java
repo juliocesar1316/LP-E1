@@ -13,10 +13,12 @@ import javax.swing.JInternalFrame;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import java.awt.Color;
 import javax.swing.UIManager;
+import java.util.HashSet;
 
 public class FormCapa extends JFrame {
 
@@ -29,7 +31,15 @@ public class FormCapa extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @param c2 
 	 */
+
+	ArrayList<String> capa = new ArrayList();
+	int sizeCapa = capa.size();
+		
+	HashSet<String> capaHash= new HashSet();
+	int sizeCapaHash = capaHash.size();
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -119,6 +129,8 @@ public class FormCapa extends JFrame {
 		btn_enviar.setBackground(new Color(255, 255, 255));
 		btn_enviar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				/*
 				Capacete c2 = new Capacete();
 				c2.setMarca(input_marca.getText());
 				c2.setMaterial(input_material.getText());
@@ -137,9 +149,73 @@ public class FormCapa extends JFrame {
 				input_preco.setText("");
 				System.out.println(c2.getProtecao());
 				input_prot.setText("");
+				*/
+				/*FileCsv file = new FileCsv();
+				file.File(c2.getMarca(), c2.getMaterial(), c2.getCor(), c2.getProtecao(), c2.getPreco());
+				
+				Capacete cap = new Capacete();
+				cap.input_marca.getText();
+				cap.getMaterial();
+				cap.getCor();
+				cap.getPreco();
+				cap.getProtecao();
+				*/
+				
+				Capacete c2 = new Capacete();
+				c2.setMarca(input_marca.getText());
+				c2.setMaterial(input_material.getText());
+				c2.setCor(input_cor.getText());
+				double numberPreco = Double.parseDouble(input_preco.getText());
+				c2.setPreco(numberPreco);
+				c2.setProtecao(input_prot.getText());
+				
+				capa.add(c2.getMarca());
+				capa.add(c2.getMaterial());
+				capa.add(c2.getCor());
+				capa.add(c2.getProtecao());
+				capa.add(input_preco.getText());
+				
+				capaHash.add(c2.getMarca());
+				capaHash.add(c2.getMaterial());
+				capaHash.add(c2.getCor());
+				capaHash.add(c2.getProtecao());
+				capaHash.add(input_preco.getText());
+				
+				System.out.println(capa);
+				System.out.println(capaHash);
+				
+				input_marca.setText("");				
+				input_material.setText("");				
+				input_cor.setText("");
+				input_preco.setText("");
+				input_prot.setText("");
+				
+				/*
+				for(i=0; i <= 15; i++) {
+					capa.add(input_marca.getText());
+					capa.add(input_material.getText());
+					capa.add(input_cor.getText());
+					//double numberPreco = Double.parseDouble(input_preco.getText());
+					capa.add(input_preco.getText());
+					capa.add(input_prot.getText());
+					
+					if(capa.get(i) == "") {
+						System.out.println(capa.get(i));
+						i++;
+					}
+					input_marca.setText("");				
+					input_material.setText("");				
+					input_cor.setText("");
+					input_preco.setText("");
+					input_prot.setText("");
+				}
+				
+				System.out.println(capa);
 				
 				FileCsv file = new FileCsv();
-				file.File(c2.getMarca(), c2.getMaterial(), c2.getCor(), c2.getProtecao(), c2.getPreco());
+				file.File(capa);
+				
+				*/
 			}
 		});
 		
